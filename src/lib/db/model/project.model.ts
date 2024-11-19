@@ -1,4 +1,3 @@
-// src/lib/db/models/project.model.ts
 import mongoose from 'mongoose';
 
 const projectSchema = new mongoose.Schema({

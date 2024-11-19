@@ -1,6 +1,5 @@
-// src/lib/services/auth.service.ts
 import { connectDB } from "@/lib/db/mongodb";
-import { User } from "@/lib/db/models/user.model";
+import { User } from "../../lib/db/model/user.model";
 import bcrypt from "bcryptjs";
 import jwt from "jsonwebtoken";
 
@@ -66,5 +65,23 @@ export class AuthService {
     } catch {
       return null;
     }
+  }
+
+  static async updateProfile(profile: { name: string; email: string }) {
+    await connectDB();
+
+    const user = await User.findOne({ email: profile.email });
+    if (!user) {
+      throw new Error("User not found");
+    }
+
+    user.name = profile.name;
+    await user.save();
+
+    return {
+      id: user._id,
+      email: user.email,
+      name: user.name,
+    };
   }
 }

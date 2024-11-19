@@ -1,4 +1,3 @@
-// src/config/api.ts
 import { AxiosRequestConfig } from 'axios';
 import { APP_CONFIG } from './constants';
 

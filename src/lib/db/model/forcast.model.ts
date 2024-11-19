@@ -1,4 +1,3 @@
-// src/lib/db/models/forecast.model.ts
 import mongoose from 'mongoose';
 
 const forecastSchema = new mongoose.Schema({

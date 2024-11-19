@@ -1,6 +1,5 @@
-// src/lib/services/user.service.ts
 import { connectDB } from "@/lib/db/mongodb";
-import { User } from "@/lib/db/models/user.model";
+import { User } from "../../lib/db/model/user.model";
 
 export class UserService {
   static async getProfile(userId: string) {

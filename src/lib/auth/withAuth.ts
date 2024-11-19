@@ -1,4 +1,3 @@
-// src/lib/auth/withAuth.ts
 import { getSession } from "./session";
 import { NextResponse } from "next/server";
 import type { NextRequest } from "next/server";

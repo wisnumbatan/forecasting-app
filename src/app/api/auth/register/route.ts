@@ -1,7 +1,6 @@
-// src/app/api/auth/register/route.ts
 import { NextResponse } from "next/server";
 import { z } from "zod";
-import { AuthService } from "@/lib/services/auth.service";
+import { AuthService } from "../../../../lib/service/auth.service";
 
 const registerSchema = z.object({
   email: z.string().email(),
